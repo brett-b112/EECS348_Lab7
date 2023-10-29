@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<h1>EECS 348 Lab Seven Practice Four</h1>
+	<form method="post">
+		<p>Size of the multiplication table:<input type="text" name="number"></p>
+		<input type="submit" value="Generate Table">
+	</form>
+
+<?php
+    function generateMultiplicationTable() {
+        if (isset($_POST['number'])) {
+            $number = intval($_POST['number']);
+
+            echo '<table border="1">';
+            echo '<tr>';
+            echo '<th>&times;</th>';
+
+            for ($i = 1; $i <= $number; $i++) {
+                echo '<th>' . $i . '</th>';
+            }
+            echo '</tr>';
+
+            for ($i = 1; $i <= $number; $i++) {
+                echo '<tr>';
+                echo '<th>' . $i . '</th>';
+                for ($j = 1; $j <= $number; $j++) {
+                    echo '<td>' . ($i * $j) . '</td>';
+                }
+                echo '</tr>';
+            }
+
+            echo '</table>';
+        }
+    }
+
+    generateMultiplicationTable();
+    ?></body>
+</html>
+<!DOCTYPE html>
+
